@@ -1,0 +1,937 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adnan Motors</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #fff;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+header.scrolled {
+    background-color: #333;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header .logo span {
+    color: #ffd700;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    padding: 10px 15px;
+}
+
+header ul li a:hover {
+    color: #f4a261;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('car.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.hero-section .buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-section .buttons a {
+    text-decoration: none;
+    background-color: #f4a261;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.hero-section .buttons a:hover {
+    background-color: #e76f51;
+}
+
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.about-section .content {
+    flex: 1;
+    text-align: left;
+}
+
+
+
+.about-section p {
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color: #b0b0b0;
+}
+
+.about-section .map {
+    flex: 1;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cars-section h2,
+.contact-section h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #d3d3d3;
+}
+
+.cars-section p,
+.contact-section p {
+    font-size: 1.5rem;
+    color: #b0b0b0;
+}
+
+
+
+.contact-section form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-section form button {
+    background-color: #f4a261;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-section form button:hover {
+    background-color: #e76f51;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+footer a {
+    color: #f4a261;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.about-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #222;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #d3d3d3;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.services-section .service-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.services-section .service-item {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #b0b0b0;
+}
+
+.services-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+
+
+
+
+
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #d3d3d3;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.contact-form button {
+    background-color: #f4a261;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #e76f51;
+}
+
+
+.testimonials-section {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+}
+
+.testimonial h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.testimonial span {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+}
+
+.owner-section {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.owner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.owner-info {
+    flex: 1;
+    text-align: left;
+}
+
+.owner-image {
+    flex: 1;
+    text-align: right;
+}
+
+.owner-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 5px solid #fff;
+}
+.contact-section {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-info {
+    flex:0.9;
+    text-align: middle;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form {
+    flex-basis: 40%; /* Add this */
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    flex-basis: 40%; /* Add this */
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #b0b0b0;
+}
+
+.map {
+    flex: 1;
+}
+.owner-section {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.owner-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.owner-image {
+    flex: 1;
+    text-align: center;
+}
+
+.owner-image img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20%;
+    border: 5px solid #fff;
+}
+
+.owner-info {
+    flex: 1;
+    text-align: left;
+}
+
+.owner-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.owner-info p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.owner-cta {
+    background-color: #ffd700;
+    color: #222;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.owner-cta:hover {
+    background-color: #ff9900;
+}
+.contact-section {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-right {
+    flex: 1;
+}
+
+.contact-form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.map {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.owners-section {
+    background-color: #222;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.owners-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.owner {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+.owner-image {
+    text-align: center;
+}
+
+.owner-image img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    
+    border: 5px solid #fff;
+}
+
+.owner-info {
+    text-align: left;
+    padding: 20px;
+}
+
+.owner-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.owner-info p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.owner-cta {
+    background-color: #ffd700;
+    color: #222;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.owner-cta:hover {
+    background-color: #ff9900;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    header li {
+        margin-bottom: 10px;
+    }
+
+    header a {
+        font-size: 1.2rem;
+    }
+
+    .hero-section {
+        height: 100vh;
+        background-position: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+
+    .map {
+        height: 200px;
+    }
+
+    .owner-section {
+        padding: 40px 20px;
+    }
+
+    .owner-container {
+        flex-direction: column;
+    }
+
+    .owner-image {
+        margin-bottom: 20px;
+    }
+
+    .owner-info {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+
+    header nav ul.active {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .owners-section {
+        padding: 40px 20px;
+    }
+
+    .owners-container {
+        flex-direction: column;
+    }
+
+    .owner {
+        margin-bottom: 20px;
+    }
+
+    .owner-image {
+        margin-bottom: 10px;
+    }
+
+    .owner-info {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    /* ... existing styles ... */
+
+    /* Add these new styles */
+    .testimonials-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .testimonial {
+        flex-basis: 40%;
+        margin: 10px;
+    }
+
+    .services-section .service-items {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .services-section .service-item {
+        flex-basis: 40%;
+        margin: 10px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><span>Adnan</span> Motors</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <h1>Welcome to Adnan Motors</h1>
+        <p>Your trusted car showroom in Rawalpindi</p>
+        <div class="buttons">
+            <a href="#cars">Browse Cars</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </section>
+    
+    <section id="about" class="section about-section">
+        <h2>About Us</h2>
+        <h3>How It Works</h3>
+        <p>Have a car to sell? Send us your car's pictures and details, and we'll take care of the rest. Our team will work tirelessly to find the best buyer for your vehicle, ensuring a seamless and transparent selling experience.</p>
+        <h3>Our Story</h3>
+        <p>Adnan Motors has been serving the Rawalpindi community for over 10 years, providing exceptional car buying and selling experiences. Our commission-based model ensures that our customers receive competitive rates and unparalleled service.</p>
+        <h3>Why Choose Us?</h3>
+        <p>At Adnan Motors, we pride ourselves on our commitment to transparency, integrity, and customer satisfaction. Our team is dedicated to finding the perfect vehicle for our buyers and securing the best deals for our sellers.</p>
+        <h3>Visit Us</h3>
+        <p>Our office is conveniently located near Savor Food in Sadiqabad, Rawalpindi. Visit us today to explore our range of vehicles or to discuss your car selling needs. Alternatively, connect with us on WhatsApp to learn more about our services.</p>
+        <p>Contact Information:</p>
+        <p>Address: Near Nawaz Shareef Park Main Murree Rd, bahrani univercity, Sattilite, town, Rawalpindi, 46000</p>
+        <p>WhatsApp: +92 333 5108092 </p>
+    </section>
+    
+    <section id="services" class="section services-section">
+        <h2>Our Services</h2>
+        <div class="service-items">
+            <div class="service-item">
+                <h3>Sell Cars</h3>
+                <p>We help you sell your car at the best possible price.</p>
+            </div>
+            <div class="service-item">
+                <h3>Buy Cars</h3>
+                <p>Explore a variety of vehicles to find your perfect match.</p>
+            </div>
+            <div class="service-item">
+                <h3>Commission-Based Model</h3>
+                <p>Benefit from our transparent and fair commission-based services.</p>
+            </div>
+        </div>
+    </section>
+    <section id="testimonials" class="section testimonials-section">
+        <h2>Testimonials</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <h3>John Doe</h3>
+                <span>Happy Customer</span>
+            </div>
+            <div class="testimonial">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <h3>Jane Doe</h3>
+                <span>Satisfied Client</span>
+            </div>
+            <div class="testimonial">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <h3>Bob Smith</h3>
+                <span>Returning Customer</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Owner Section -->
+    <section id="owners" class="section owners-section">
+        <h2>Meet the Owners</h2>
+        <div class="owners-container">
+            <div class="owner">
+                <div class="owner-image">
+                    <img src="Zeeshan shah.jpeg" alt="Owner Image">
+                </div>
+                <div class="owner-info">
+                    <h3>Zeeshan Shah</h3>
+                    <p>CEO, Adnan Motors</p>
+                    <p>With over 10 years of experience in the automotive industry, Zeeshan Shah has established himself as a trusted and reputable figure in the field.</p>
+                    <p>Under Zeeshan's leadership, Adnan Motors has consistently delivered high-quality services, earning the company a reputation for excellence and integrity.</p>
+                    <p>Contact: +92 333 5108092 </p>
+                    <button class="owner-cta">Learn More About Zeeshan</button>
+                </div>
+            </div>
+            <div class="owner">
+                <div class="owner-image">
+                    <img src="Kami shah.jpeg" alt="Owner Image">
+                </div>
+                <div class="owner-info">
+                    <h3>Kami Shah</h3>
+                    <p>COO, Adnan Motors</p>
+                    <p>With a strong background in business management, Kami Shah has played a crucial role in shaping Adnan Motors into a successful and reputable company.</p>
+                    <p>Kami's expertise in operations and management has enabled Adnan Motors to maintain high standards of quality and customer satisfaction.</p>
+                    <p>Contact: +92 300 5141414</p>
+                    <button class="owner-cta">Learn More About Kami</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="section contact-section">
+        <h2>Get in Touch</h2>
+        <div class="contact-container">
+            <div class="contact-left">
+                <div class="contact-form">
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name">
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email">
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        <a href="https://wa.me/+923335108092">+92 333 5108092</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <a href="mailto:info@adnanmotors.com">info@adnanmotors.com</a>
+                    </p>
+                    <p>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        Near Nawaz Shareef Park Main Murree Rd, bahrani univercity, Sattilite, town, Rawalpindi, 46000
+                    </p>
+                </div>
+            </div>
+            <div class="contact-right">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.475107940565!2d73.07515317441158!3d33.644849339134204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df952f371f7f49%3A0x5f116097c0ff95a7!2sAdnan%20Motors%20%26%20Property%20Consultant!5e0!3m2!1sen!2s!4v1737656993613!5m2!1sen!2s" 
+                        width="100%"
+                        height="400"  
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Adnan Motors. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+    
+    <script>
+ const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('header nav ul');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+        const header = document.querySelector('header');
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    </body>
+    </html>
